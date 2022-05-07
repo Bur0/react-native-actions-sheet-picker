@@ -1,21 +1,23 @@
 import React, { useRef, createRef } from 'react';
 import {
   View,
-  Text,
   TouchableOpacity,
   TextInput,
   ActivityIndicator,
+  Text,
 } from 'react-native';
 import ActionSheet, { SheetManager } from 'react-native-actions-sheet';
 import { FlatList } from 'react-native-gesture-handler';
 
+import type { PickerProps } from './Picker.types';
+
 /* import { useSafeAreaInsets } from 'react-native-safe-area-context'; */
 
-export const onOpen = (id) => {
+export const onOpen = (id: any) => {
   SheetManager.show(id);
 };
 
-export const Picker = ({
+export const Picker: React.FC<PickerProps> = ({
   data,
   id,
   placeholderText,
@@ -27,19 +29,20 @@ export const Picker = ({
   loading = false,
   height = 400,
   inputValue,
-  noDataFoundText,
+  noDataFoundText = 'No Data Found',
 }) => {
   const onClose = () => {
     SheetManager.hide(id);
   };
 
-  const actionSheetRef = createRef();
+  const actionSheetRef = createRef<any>();
+
   const scrollViewRef = useRef(null);
   /*const insets = useSafeAreaInsets();*/
 
-  const renderItem = ({ item }) => <Item item={item} />;
+  const renderItem = ({ item }: any) => <Item item={item} />;
 
-  const Item = ({ item }) => (
+  const Item = ({ item }: any | undefined) => (
     <View style={{ borderBottomWidth: 0.5, borderColor: '#CDD4D9' }}>
       <TouchableOpacity
         style={{ paddingVertical: 20 }}
@@ -48,7 +51,7 @@ export const Picker = ({
           onClose();
         }}
       >
-        <Text>{item.name}</Text>
+        <Text>{item.name ? item.name : null}</Text>
       </TouchableOpacity>
     </View>
   );
