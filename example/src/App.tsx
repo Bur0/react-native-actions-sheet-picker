@@ -43,11 +43,8 @@ export default function App() {
         label="Select Country"
         searchable={true}
         data={filteredData}
-        placeholderText="Search"
         inputValue={filter}
         placeholderTextColor="#8B93A5"
-        closeText="Close"
-        noDataFoundText="No Data Found"
         loading={false}
         setSelected={setSelected}
         onSearch={onSearch}

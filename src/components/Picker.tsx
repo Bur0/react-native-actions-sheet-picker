@@ -20,15 +20,16 @@ export const onOpen = (id: any) => {
 export const Picker: React.FC<PickerProps> = ({
   data,
   id,
-  placeholderText,
   searchable,
   onSearch,
   label,
-  closeText,
+
   setSelected,
   loading = false,
   height = 400,
   inputValue,
+  closeText = 'Close',
+  placeholderText = 'Search',
   noDataFoundText = 'No Data Found',
 }) => {
   const onClose = () => {
