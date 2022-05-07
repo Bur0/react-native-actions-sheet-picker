@@ -143,5 +143,10 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "react-native-actions-sheet": "^0.6.1",
+    "react-native-gesture-handler": "^2.4.2",
+    "react-native-safe-area-context": "^4.2.5"
   }
 }
