@@ -137,7 +137,6 @@
 				47F7ED3B7971BE374F7B8635 /* Pods-ActionsSheetPickerExample.debug.xcconfig */,
 				E00ACF0FDA8BF921659E2F9A /* Pods-ActionsSheetPickerExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

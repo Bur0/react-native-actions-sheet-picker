@@ -1,10 +1,11 @@
 export interface PickerProps {
-  data?: [];
+  data?: never[] | undefined;
   id: string;
   placeholderText?: string;
   searchable?: boolean;
   onSearch?: (value: string) => void;
   label?: string;
+  placeholderTextColor?: string;
   closeText?: string;
   setSelected?: any;
   loading?: boolean;

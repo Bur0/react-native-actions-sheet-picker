@@ -3,29 +3,40 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { Picker, onOpen } from 'react-native-actions-sheet-picker';
 
+/*
+ **Example data:
+ */
 import country from './countrys.json';
 
 export default function App() {
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState(undefined);
-  const [filter, setFilter] = useState('');
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     setData(country);
   }, []);
 
+  /*
+   **Example filter function
+   * @param {string} filter
+   */
   const filteredData = useMemo(() => {
     if (data && data.length > 0) {
       return data.filter((item) =>
         item.name
           .toLocaleLowerCase('en')
-          .includes(filter.toLocaleLowerCase('en'))
+          .includes(query.toLocaleLowerCase('en'))
       );
     }
-  }, [data, filter]);
+  }, [data, query]);
 
+  /*
+   **Input search
+   *@param {string} text
+   */
   const onSearch = (text) => {
-    setFilter(text);
+    setQuery(text);
   };
 
   return (
@@ -35,17 +46,17 @@ export default function App() {
           onOpen('country');
         }}
       >
-        <Text>Open the modal {filter}</Text>
+        <Text>Open the modal</Text>
       </TouchableOpacity>
       <Text>Selected : {JSON.stringify(selected)}</Text>
       <Picker
         id="country"
-        label="Select Country"
-        searchable={true}
         data={filteredData}
-        inputValue={filter}
-        placeholderTextColor="#8B93A5"
+        inputValue={query}
+        searchable={true}
         loading={false}
+        placeholderTextColor="#8B93A5"
+        label="Select Country"
         setSelected={setSelected}
         onSearch={onSearch}
       />

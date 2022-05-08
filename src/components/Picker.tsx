@@ -18,19 +18,19 @@ export const onOpen = (id: any) => {
 };
 
 export const Picker: React.FC<PickerProps> = ({
-  data,
   id,
+  data,
+  inputValue,
   searchable,
+  loading = false,
   onSearch,
   label,
-
   setSelected,
-  loading = false,
   height = 400,
-  inputValue,
   closeText = 'Close',
   placeholderText = 'Search',
   noDataFoundText = 'No Data Found',
+  placeholderTextColor = '#8B93A5',
 }) => {
   const onClose = () => {
     SheetManager.hide(id);
@@ -44,18 +44,24 @@ export const Picker: React.FC<PickerProps> = ({
   const renderItem = ({ item }: any) => <Item item={item} />;
 
   const Item = ({ item }: any | undefined) => (
-    <View style={{ borderBottomWidth: 0.5, borderColor: '#CDD4D9' }}>
-      <TouchableOpacity
-        style={{ paddingVertical: 20 }}
-        onPress={() => {
-          setSelected(item);
-          onClose();
-        }}
-      >
-        <Text>{item.name ? item.name : null}</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity
+      style={{
+        paddingVertical: 20,
+        borderBottomWidth: 0.5,
+        borderColor: '#CDD4D9',
+      }}
+      onPress={() => {
+        ItemOnPress(item);
+      }}
+    >
+      <Text>{item.name ? item.name : null}</Text>
+    </TouchableOpacity>
   );
+
+  const ItemOnPress = (item) => {
+    setSelected(item);
+    onClose();
+  };
 
   const keyExtractor = (_item: any, index: { toString: () => any }) =>
     index.toString();
@@ -65,6 +71,7 @@ export const Picker: React.FC<PickerProps> = ({
       ref={actionSheetRef}
       indicatorColor={'transparent'}
       gestureEnabled={true}
+      keyboardShouldPersistTaps="handled"
       id={id}
     >
       <View
@@ -73,6 +80,7 @@ export const Picker: React.FC<PickerProps> = ({
         }}
       >
         <FlatList
+          disableScrollViewPanResponder={true}
           contentContainerStyle={{ paddingHorizontal: 20 }}
           stickyHeaderIndices={[0]}
           ListHeaderComponent={
@@ -100,7 +108,7 @@ export const Picker: React.FC<PickerProps> = ({
                         padding: 10,
                       }}
                       value={inputValue}
-                      placeholderTextColor="#8B93A5"
+                      placeholderTextColor={placeholderTextColor}
                       onChangeText={onSearch}
                       placeholder={placeholderText}
                       clearButtonMode="always"
