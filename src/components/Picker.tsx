@@ -58,7 +58,7 @@ export const Picker: React.FC<PickerProps> = ({
     </TouchableOpacity>
   );
 
-  const ItemOnPress = (item) => {
+  const ItemOnPress = (item: any) => {
     setSelected(item);
     onClose();
   };
