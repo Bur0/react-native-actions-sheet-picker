@@ -149,6 +149,10 @@ const styles = StyleSheet.create({
 | **flatListProps**    | `object` | [FlatListProps](https://reactnative.dev/docs/flatlist 'FlatListProps')                                               |     |
 | **searchInputProps** | `object` | [TextInputProps](https://reactnative.dev/docs/textinput 'TextInputProps')                                            |     |
 
+## Roadmap
+
+ * [ ] Multiple select
+ * [ ] renderListItem | props
 
 ## Contributing
 
