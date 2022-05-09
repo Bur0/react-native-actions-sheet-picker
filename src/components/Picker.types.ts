@@ -1,4 +1,4 @@
-import type { TextInputProps, FlatListProps } from 'react-native';
+import type { TextInputProps } from 'react-native';
 
 export interface PickerProps {
   id: string;
@@ -15,6 +15,6 @@ export interface PickerProps {
   inputValue?: string;
   noDataFoundText?: string;
   searchInputProps?: TextInputProps;
-  flatListProps?: FlatListProps;
+  flatListProps?: object;
   actionsSheetProps?: object;
 }
