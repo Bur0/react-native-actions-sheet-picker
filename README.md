@@ -1,6 +1,6 @@
 # React Native Actions Sheet Picker
 
-Created using react-native-actions-sheet | select | picker | is the library.
+A React Native component that provides a filterable select dropdown/picker.
 
 ## Preview
 

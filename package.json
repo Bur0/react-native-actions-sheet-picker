@@ -1,7 +1,7 @@
 {
   "name": "react-native-actions-sheet-picker",
   "version": "0.2.8",
-  "description": "Created using react-native-actions-sheet | select | picker | is the library.",
+  "description": "A React Native component that provides a filterable select dropdown/picker.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
