@@ -6,6 +6,7 @@ import {
   ActivityIndicator,
   Text,
   Dimensions,
+  SafeAreaView,
 } from 'react-native';
 import ActionSheet, { SheetManager } from 'react-native-actions-sheet';
 import { FlatList } from 'react-native-gesture-handler';
@@ -17,19 +18,19 @@ export const onOpen = (id: any) => {
 };
 
 export const Picker: React.FC<PickerProps> = ({
-  id,
-  data,
+  id = null,
+  data = [],
   inputValue,
-  searchable,
+  searchable = false,
   loading = false,
-  onSearch,
   label,
-  setSelected,
   height = Dimensions.get('window').height * 0.5,
   closeText = 'Close',
   placeholderText = 'Search',
   noDataFoundText = 'No Data Found.',
   placeholderTextColor = '#8B93A5',
+  setSelected,
+  onSearch,
 }) => {
   const onClose = () => {
     SheetManager.hide(id);
@@ -66,13 +67,13 @@ export const Picker: React.FC<PickerProps> = ({
 
   return (
     <ActionSheet
+      id={id}
       ref={actionSheetRef}
       indicatorColor={'transparent'}
       gestureEnabled={true}
       keyboardShouldPersistTaps="handled"
-      id={id}
     >
-      <View
+      <SafeAreaView
         style={{
           height: height,
         }}
@@ -168,7 +169,7 @@ export const Picker: React.FC<PickerProps> = ({
             actionSheetRef.current?.handleChildScrollEnd()
           }
         />
-      </View>
+      </SafeAreaView>
     </ActionSheet>
   );
 };

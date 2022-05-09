@@ -1,6 +1,6 @@
 export interface PickerProps {
-  data?: never[] | undefined;
   id: string;
+  data?: never[] | undefined;
   placeholderText?: string;
   searchable?: boolean;
   onSearch?: (value: string) => void;
