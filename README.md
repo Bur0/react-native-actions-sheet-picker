@@ -28,8 +28,8 @@ npm install react-native-actions-sheet-picker
 | Properties           | Type     | Description                  | Default |
 | -------------------- | -------- | ---------------------------- | ------- |
 |**ActionsShetProps** |`object`|  [react-native-actions-sheet](https://github.com/ammarahm-ed/react-native-actions-sheet "react-native-actions-sheet")     |         |
-|**FlatListProps**|`object`| React Native Flatlist Props  |         |
-|**SearchInputProps**|`object`| React Native TextInput Props |      ||
+|**FlatListProps**|`object`|[FlatListProps](https://reactnative.dev/docs/flatlist "FlatListProps") |         |
+|**SearchInputProps**|`object`| [TextInputProps](https://reactnative.dev/docs/textinput "TextInputProps") |      ||
 
 ## Contributing
 
