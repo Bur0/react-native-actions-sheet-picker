@@ -31,7 +31,7 @@ yarn add yarn add react-native-gesture-handler
 ## Options
 
 | Properties               | Type       | Description                           | Default                                 |
-| ------------------------ | ---------- | ------------------------------------- | --------------------------------------- | --- |
+| ------------------------ | ---------- | ------------------------------------- | --------------------------------------- |
 | **id** <br> \*_required_ | `string`   | A unique id for the ActionSheet       |                                         |
 | **data**                 | `array`    | Array of list items                   | `[]`                                    |
 | **inputValue**           | `string`   | The value to show for the text input. |                                         |
@@ -44,7 +44,7 @@ yarn add yarn add react-native-gesture-handler
 | **noDataFoundText**      | `string`   | No data found text                    | `"No Data Found.'"`                     |
 | **placeholderTextColor** | `string`   | Placeholder text color                | `#8B93A5`                               |
 | **setSelected**          | `function` | Selected function                     |                                         |
-| **onSearch**             | `function` | Textinput search function             |                                         |     |
+| **onSearch**             | `function` | Textinput search function             |                                         |
 
 ## Core Props of using packages
 
