@@ -1,3 +1,5 @@
+import type { TextInputProps, FlatListProps } from 'react-native';
+
 export interface PickerProps {
   id: string;
   data?: never[] | undefined;
@@ -12,4 +14,7 @@ export interface PickerProps {
   height?: number;
   inputValue?: string;
   noDataFoundText?: string;
+  searchInputProps?: TextInputProps;
+  flatListProps?: FlatListProps;
+  actionsSheetProps?: object;
 }

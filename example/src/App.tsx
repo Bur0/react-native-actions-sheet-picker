@@ -1,18 +1,12 @@
 import React, { useState, useMemo, useEffect } from 'react';
 
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  SafeAreaView,
-} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Picker, onOpen } from 'react-native-actions-sheet-picker';
 
 /*
  **Example data:
  */
-import country from './countrys.json';
+import countries from './countries.json';
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -20,7 +14,7 @@ export default function App() {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    setData(country);
+    setData(countries);
   }, []);
 
   /*

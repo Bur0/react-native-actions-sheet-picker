@@ -18,7 +18,7 @@ export const onOpen = (id: any) => {
 };
 
 export const Picker: React.FC<PickerProps> = ({
-  id = null,
+  id = undefined,
   data = [],
   inputValue,
   searchable = false,
@@ -31,6 +31,9 @@ export const Picker: React.FC<PickerProps> = ({
   placeholderTextColor = '#8B93A5',
   setSelected,
   onSearch,
+  searchInputProps,
+  flatListProps,
+  actionsSheetProps,
 }) => {
   const onClose = () => {
     SheetManager.hide(id);
@@ -72,6 +75,7 @@ export const Picker: React.FC<PickerProps> = ({
       indicatorColor={'transparent'}
       gestureEnabled={true}
       keyboardShouldPersistTaps="handled"
+      {...actionsSheetProps}
     >
       <SafeAreaView
         style={{
@@ -115,6 +119,7 @@ export const Picker: React.FC<PickerProps> = ({
                       clearButtonMode="always"
                       autoCapitalize="none"
                       autoCorrect={false}
+                      {...searchInputProps}
                     />
                   </View>
 
@@ -168,6 +173,7 @@ export const Picker: React.FC<PickerProps> = ({
           onMomentumScrollEnd={() =>
             actionSheetRef.current?.handleChildScrollEnd()
           }
+          {...flatListProps}
         />
       </SafeAreaView>
     </ActionSheet>

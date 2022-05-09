@@ -50,7 +50,7 @@ import { Picker, onOpen } from 'react-native-actions-sheet-picker';
 /*
  **Example data:
  */
-import countrys from './countrys.json';
+import countries from './countries.json';
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -58,7 +58,7 @@ export default function App() {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    setData(countrys);
+    setData(countries);
   }, []);
 
   /*
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
 
 | Properties               | Type       | Description                           | Default                                 |
 | ------------------------ | ---------- | ------------------------------------- | --------------------------------------- |
-| **id** <br> \*_required_ | `string`   | A unique id for the ActionSheet       |                                         |
+| **id** <br> \*_required_ | `string`   | A unique id for the ActionSheet       | `undefined`                             |
 | **data**                 | `array`    | Array of list items                   | `[]`                                    |
 | **inputValue**           | `string`   | The value to show for the text input. |                                         |
 | **searchable**           | `boolean ` | Searchable state                      | `false`                                 |
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
 | **height**               | `string`   | ActionSheet height                    | `Dimensions.get('window').height * 0.5` |
 | **closeText**            | `string`   | Close text                            | `"Close"`                               |
 | **placeholderText**      | `string`   | Placeholder text                      | `"Search"`                              |
-| **noDataFoundText**      | `string`   | No data found text                    | `"No Data Found.'"`                     |
+| **noDataFoundText**      | `string`   | No data found text                    | `"No Data Found."`                      |
 | **placeholderTextColor** | `string`   | Placeholder text color                | `#8B93A5`                               |
 | **setSelected**          | `function` | Selected function                     |                                         |
 | **onSearch**             | `function` | Textinput search function             |                                         |
@@ -145,9 +145,9 @@ const styles = StyleSheet.create({
 
 | Properties           | Type     | Description                                                                                                          |
 | -------------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
-| **ActionsShetProps** | `object` | [react-native-actions-sheet](https://github.com/ammarahm-ed/react-native-actions-sheet 'react-native-actions-sheet') |     |
-| **FlatListProps**    | `object` | [FlatListProps](https://reactnative.dev/docs/flatlist 'FlatListProps')                                               |     |
-| **SearchInputProps** | `object` | [TextInputProps](https://reactnative.dev/docs/textinput 'TextInputProps')                                            |     |
+| **actionsShetProps** | `object` | [react-native-actions-sheet](https://github.com/ammarahm-ed/react-native-actions-sheet 'react-native-actions-sheet') |     |
+| **flatListProps**    | `object` | [FlatListProps](https://reactnative.dev/docs/flatlist 'FlatListProps')                                               |     |
+| **searchInputProps** | `object` | [TextInputProps](https://reactnative.dev/docs/textinput 'TextInputProps')                                            |     |
 
 
 ## Contributing
