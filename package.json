@@ -1,6 +1,6 @@
 {
   "name": "react-native-actions-sheet-picker",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Created using react-native-actions-sheet | select | picker | is the library.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
