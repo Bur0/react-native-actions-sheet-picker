@@ -34,7 +34,21 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "react native select",
+    "react native searchable select",
+    "react native picker",
+    "react native dropdown",
+    "react native modal",
+    "react native selector",
+    "picker",
+    "dropdown",
+    "modal",
+    "selectbox",
+    "searchable",
+    "option",
+    "selector",
+    "actions sheet"
   ],
   "repository": "https://github.com/Bur0/react-native-actions-sheet-picker",
   "author": "Burak Alp <burakalpkara@gmail.com> (https://github.com/Bur0)",
