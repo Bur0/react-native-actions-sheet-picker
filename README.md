@@ -5,12 +5,12 @@ test
 ## Preview
 
 <img
-width='30%'
+width="%33"
 height="600"
 src="https://github.com/Bur0/react-native-actions-sheet-picker/blob/master/gifs/ios-default.gif"
 />
 <img
-width='30%'
+width="%33"
 height="600"
 src="https://github.com/Bur0/react-native-actions-sheet-picker/blob/master/gifs/ios-searchable.gif"
 />
