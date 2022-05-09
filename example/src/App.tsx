@@ -1,6 +1,12 @@
 import React, { useState, useMemo, useEffect } from 'react';
 
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import { Picker, onOpen } from 'react-native-actions-sheet-picker';
 
 /*
@@ -40,13 +46,14 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TouchableOpacity
+        style={styles.button}
         onPress={() => {
           onOpen('country');
         }}
       >
-        <Text>Open the modal</Text>
+        <Text>Open ActionSheet</Text>
       </TouchableOpacity>
       <Text style={{ padding: 10 }}>Chosen : {JSON.stringify(selected)}</Text>
       <Picker
@@ -54,12 +61,11 @@ export default function App() {
         data={filteredData}
         inputValue={query}
         searchable={true}
-        placeholderTextColor="#8B93A5"
         label="Select Country"
         setSelected={setSelected}
         onSearch={onSearch}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -67,6 +73,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+  },
+  button: {
+    backgroundColor: '#8B93A5',
+    padding: 10,
+    borderRadius: 6,
+    marginTop: 50,
   },
 });
