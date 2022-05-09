@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
 
 | Properties               | Type       | Description                           | Default                                 |
 | ------------------------ | ---------- | ------------------------------------- | --------------------------------------- |
-| **id** <br> \*_required_ | `string`   | A unique id for the ActionSheet       | `undefined`                             |
+| **id** <br> \*_required_ | `string`   | A unique id for the ActionSheet       |                                         |
 | **data**                 | `array`    | Array of list items                   | `[]`                                    |
 | **inputValue**           | `string`   | The value to show for the text input. |                                         |
 | **searchable**           | `boolean ` | Searchable state                      | `false`                                 |

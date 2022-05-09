@@ -18,7 +18,7 @@ export const onOpen = (id: any) => {
 };
 
 export const Picker: React.FC<PickerProps> = ({
-  id = undefined,
+  id,
   data = [],
   inputValue,
   searchable = false,
