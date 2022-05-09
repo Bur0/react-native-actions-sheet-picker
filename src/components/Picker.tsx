@@ -74,7 +74,7 @@ export const Picker: React.FC<PickerProps> = ({
       ref={actionSheetRef}
       indicatorColor={'transparent'}
       gestureEnabled={true}
-      keyboardShouldPersistTaps="handled"
+      keyboardShouldPersistTaps="always"
       {...actionsSheetProps}
     >
       <SafeAreaView
