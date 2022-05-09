@@ -1,6 +1,6 @@
 # React Native Actions Sheet Picker
 
-test
+Created using react-native-actions-sheet | select | picker | is the library.
 
 ## Preview
 
