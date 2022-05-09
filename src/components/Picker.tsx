@@ -5,13 +5,12 @@ import {
   TextInput,
   ActivityIndicator,
   Text,
+  Dimensions,
 } from 'react-native';
 import ActionSheet, { SheetManager } from 'react-native-actions-sheet';
 import { FlatList } from 'react-native-gesture-handler';
 
 import type { PickerProps } from './Picker.types';
-
-/* import { useSafeAreaInsets } from 'react-native-safe-area-context'; */
 
 export const onOpen = (id: any) => {
   SheetManager.show(id);
@@ -26,10 +25,10 @@ export const Picker: React.FC<PickerProps> = ({
   onSearch,
   label,
   setSelected,
-  height = 400,
+  height = Dimensions.get('window').height * 0.5,
   closeText = 'Close',
   placeholderText = 'Search',
-  noDataFoundText = 'No Data Found',
+  noDataFoundText = 'No Data Found.',
   placeholderTextColor = '#8B93A5',
 }) => {
   const onClose = () => {
@@ -39,11 +38,10 @@ export const Picker: React.FC<PickerProps> = ({
   const actionSheetRef = createRef<any>();
 
   const scrollViewRef = useRef(null);
-  /*const insets = useSafeAreaInsets();*/
 
   const renderItem = ({ item }: any) => <Item item={item} />;
 
-  const Item = ({ item }: any | undefined) => (
+  const Item = ({ item }: any) => (
     <TouchableOpacity
       style={{
         paddingVertical: 20,
@@ -89,16 +87,17 @@ export const Picker: React.FC<PickerProps> = ({
                 backgroundColor: '#ffffff',
               }}
             >
-              <View
-                style={{
-                  flexDirection: 'row',
-                  width: '100%',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                }}
-              >
-                <View style={{ flexBasis: '75%' }}>
-                  {searchable ? (
+              {searchable ? (
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    width: '100%',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    marginBottom: 10,
+                  }}
+                >
+                  <View style={{ flexBasis: '75%' }}>
                     <TextInput
                       style={{
                         height: 40,
@@ -106,6 +105,7 @@ export const Picker: React.FC<PickerProps> = ({
                         borderColor: '#CDD4D9',
                         borderRadius: 6,
                         padding: 10,
+                        color: '#333',
                       }}
                       value={inputValue}
                       placeholderTextColor={placeholderTextColor}
@@ -115,18 +115,20 @@ export const Picker: React.FC<PickerProps> = ({
                       autoCapitalize="none"
                       autoCorrect={false}
                     />
-                  ) : null}
+                  </View>
+
+                  <TouchableOpacity
+                    style={{ padding: 10 }}
+                    onPress={() => {
+                      onClose();
+                    }}
+                  >
+                    <Text>{closeText}</Text>
+                  </TouchableOpacity>
                 </View>
-                <TouchableOpacity
-                  style={{ padding: 10 }}
-                  onPress={() => {
-                    onClose();
-                  }}
-                >
-                  <Text>{closeText}</Text>
-                </TouchableOpacity>
-              </View>
-              <View style={{ marginTop: 20, paddingBottom: 5 }}>
+              ) : null}
+
+              <View style={{ marginTop: 10, paddingBottom: 5 }}>
                 <Text
                   style={{
                     color: '#333',

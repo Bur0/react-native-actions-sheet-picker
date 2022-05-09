@@ -48,13 +48,12 @@ export default function App() {
       >
         <Text>Open the modal</Text>
       </TouchableOpacity>
-      <Text>Selected : {JSON.stringify(selected)}</Text>
+      <Text style={{ padding: 10 }}>Chosen : {JSON.stringify(selected)}</Text>
       <Picker
         id="country"
         data={filteredData}
         inputValue={query}
         searchable={true}
-        loading={false}
         placeholderTextColor="#8B93A5"
         label="Select Country"
         setSelected={setSelected}
@@ -69,10 +68,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
 });
