@@ -32,11 +32,11 @@ npm install react-native-actions-sheet-picker
 Please, install dependencies for using this package.
 
 ```sh
-yarn add yarn add react-native-actions-sheet
+yarn add react-native-actions-sheet
 ```
 
 ```sh
-yarn add yarn add react-native-gesture-handler
+yarn add react-native-gesture-handler
 ```
 
 ## Usage
