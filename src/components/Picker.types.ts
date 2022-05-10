@@ -17,4 +17,5 @@ export interface PickerProps {
   searchInputProps?: TextInputProps;
   flatListProps?: object;
   actionsSheetProps?: object;
+  renderListItem?: object;
 }

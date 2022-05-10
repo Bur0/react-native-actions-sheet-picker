@@ -17,6 +17,10 @@ export const onOpen = (id: any) => {
   SheetManager.show(id);
 };
 
+export const onClose = (id: any) => {
+  SheetManager.hide(id);
+};
+
 export const Picker: React.FC<PickerProps> = ({
   id,
   data = [],
@@ -34,6 +38,7 @@ export const Picker: React.FC<PickerProps> = ({
   searchInputProps,
   flatListProps,
   actionsSheetProps,
+  renderListItem,
 }) => {
   const [selectedKey, setSelectedKey] = useState(null);
 
@@ -175,7 +180,7 @@ export const Picker: React.FC<PickerProps> = ({
           ref={scrollViewRef}
           nestedScrollEnabled={true}
           data={data}
-          renderItem={renderItem}
+          renderItem={renderListItem ? renderListItem : renderItem}
           keyExtractor={keyExtractor}
           onMomentumScrollEnd={() =>
             actionSheetRef.current?.handleChildScrollEnd()
