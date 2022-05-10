@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
 | **placeholderTextColor** | `string`   | Placeholder text color                | `#8B93A5`                               |
 | **setSelected**          | `function` | Selected function                     |                                         |
 | **onSearch**             | `function` | Textinput search function             |                                         |
+| **renderListItem**       | `function` | Render List item                      |                                         |
 
 ## Core Props of using packages
 
