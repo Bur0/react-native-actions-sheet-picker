@@ -50,10 +50,6 @@ export const Picker: React.FC<PickerProps> = ({
     SheetManager.hide(id);
   };
 
-  const renderItem = ({ item, index }: any) => (
-    <Item item={item} index={index} />
-  );
-
   const Item = ({ item, index }: any) => (
     <TouchableOpacity
       style={{
@@ -180,7 +176,12 @@ export const Picker: React.FC<PickerProps> = ({
           ref={scrollViewRef}
           nestedScrollEnabled={true}
           data={data}
-          renderItem={renderListItem ? renderListItem : renderItem}
+          renderItem={({ item, index }) => {
+            if (renderListItem) {
+              return renderListItem(item, index);
+            }
+            return <Item item={item} index={index} />;
+          }}
           keyExtractor={keyExtractor}
           onMomentumScrollEnd={() =>
             actionSheetRef.current?.handleChildScrollEnd()
