@@ -38,7 +38,7 @@ export const Picker: React.FC<PickerProps> = ({
   searchInputProps,
   flatListProps,
   actionsSheetProps,
-  renderListItem,
+  renderListItem = undefined,
 }) => {
   const [selectedKey, setSelectedKey] = useState(null);
 
