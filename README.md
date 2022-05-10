@@ -12,7 +12,7 @@ src="https://github.com/Bur0/react-native-actions-sheet-picker/blob/master/gifs/
 <img
 width="%33"
 height="600"
-src="https://github.com/Bur0/react-native-actions-sheet-picker/blob/master/gifs/ios-searchable.gif"
+src="https://github.com/Bur0/react-native-actions-sheet-picker/blob/master/gifs/ios-filterable.gif"
 />
 
 ## Installation Guide
