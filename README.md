@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
 ## Roadmap
 
  * [ ] Multiple select
- * [ ] renderListItem | props
+ * [x] renderListItem | props
  * [x] Selected highlight
 
 ## Contributing
