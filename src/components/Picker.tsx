@@ -38,7 +38,7 @@ export const Picker: React.FC<PickerProps> = ({
   searchInputProps,
   flatListProps,
   actionsSheetProps,
-  renderListItem = undefined,
+  renderListItem,
 }) => {
   const [selectedKey, setSelectedKey] = useState(null);
 
@@ -177,9 +177,8 @@ export const Picker: React.FC<PickerProps> = ({
           nestedScrollEnabled={true}
           data={data}
           renderItem={({ item, index }) => {
-            if (renderListItem) {
-              return renderListItem(item, index);
-            }
+            if (renderListItem) return renderListItem(item, index);
+
             return <Item item={item} index={index} />;
           }}
           keyExtractor={keyExtractor}
