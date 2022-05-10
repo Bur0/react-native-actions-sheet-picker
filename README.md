@@ -141,6 +141,13 @@ const styles = StyleSheet.create({
 | **onSearch**             | `function` | Textinput search function             |                                         |
 | **renderListItem**       | `function` | Render List item                      |                                         |
 
+## Method
+
+| Properties               | Type       | Description                           | 
+| ------------------------ | ---------- | ------------------------------------- | 
+| **onOpen**               | `function` | SheetManager show                     |
+| **onClose**              | `function` | SheetManager hide                     |
+
 ## Core Props of using packages
 
 
