@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
 
  * [ ] Multiple select
  * [ ] renderListItem | props
- * [ ] Selected highlight
+ * [x] Selected highlight
 
 ## Contributing
 
