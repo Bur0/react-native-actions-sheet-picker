@@ -1,4 +1,4 @@
-import React, { useRef, createRef } from 'react';
+import React, { useRef, createRef, useState } from 'react';
 import {
   View,
   TouchableOpacity,
@@ -35,17 +35,21 @@ export const Picker: React.FC<PickerProps> = ({
   flatListProps,
   actionsSheetProps,
 }) => {
-  const onClose = () => {
-    SheetManager.hide(id);
-  };
+  const [selectedKey, setSelectedKey] = useState(null);
 
   const actionSheetRef = createRef<any>();
 
   const scrollViewRef = useRef(null);
 
-  const renderItem = ({ item }: any) => <Item item={item} />;
+  const onClose = () => {
+    SheetManager.hide(id);
+  };
 
-  const Item = ({ item }: any) => (
+  const renderItem = ({ item, index }: any) => (
+    <Item item={item} index={index} />
+  );
+
+  const Item = ({ item, index }: any) => (
     <TouchableOpacity
       style={{
         paddingVertical: 20,
@@ -54,9 +58,12 @@ export const Picker: React.FC<PickerProps> = ({
       }}
       onPress={() => {
         ItemOnPress(item);
+        setSelectedKey(index);
       }}
     >
-      <Text>{item.name ? item.name : null}</Text>
+      <Text style={{ fontWeight: selectedKey !== index ? 'normal' : 'bold' }}>
+        {item.name ? item.name : null}
+      </Text>
     </TouchableOpacity>
   );
 
