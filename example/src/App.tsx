@@ -8,9 +8,11 @@ import { Picker, onOpen } from 'react-native-actions-sheet-picker';
  */
 import countries from './countries.json';
 
+type CountryInfo = typeof countries[number];
+
 export default function App() {
-  const [data, setData] = useState([]);
-  const [selected, setSelected] = useState(undefined);
+  const [data, setData] = useState<CountryInfo[]>([]);
+  const [selected, setSelected] = useState<CountryInfo | undefined>(undefined);
   const [query, setQuery] = useState('');
 
   useEffect(() => {
@@ -22,20 +24,16 @@ export default function App() {
    * @param {string} filter
    */
   const filteredData = useMemo(() => {
-    if (data && data.length > 0) {
-      return data.filter((item) =>
-        item.name
-          .toLocaleLowerCase('en')
-          .includes(query.toLocaleLowerCase('en'))
-      );
-    }
+    return data.filter((item) =>
+      item.name.toLocaleLowerCase('en').includes(query.toLocaleLowerCase('en'))
+    );
   }, [data, query]);
 
   /*
    **Input search
    *@param {string} text
    */
-  const onSearch = (text) => {
+  const onSearch = (text: string) => {
     setQuery(text);
   };
 
