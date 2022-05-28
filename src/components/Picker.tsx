@@ -21,7 +21,7 @@ export const onClose = (id: any) => {
   SheetManager.hide(id);
 };
 
-export const Picker: React.FC<PickerProps> = ({
+export const Picker = <T,>({
   id,
   data = [],
   inputValue,
@@ -39,10 +39,10 @@ export const Picker: React.FC<PickerProps> = ({
   flatListProps,
   actionsSheetProps,
   renderListItem,
-}) => {
+}: PickerProps<T>) => {
   const [selectedKey, setSelectedKey] = useState(null);
 
-  const actionSheetRef = createRef<any>();
+  const actionSheetRef = createRef<ActionSheet>();
 
   const scrollViewRef = useRef(null);
 
@@ -58,7 +58,7 @@ export const Picker: React.FC<PickerProps> = ({
         borderColor: '#CDD4D9',
       }}
       onPress={() => {
-        ItemOnPress(item);
+        itemOnPress(item);
         setSelectedKey(index);
       }}
     >
@@ -68,13 +68,12 @@ export const Picker: React.FC<PickerProps> = ({
     </TouchableOpacity>
   );
 
-  const ItemOnPress = (item: any) => {
+  const itemOnPress = (item: T) => {
     setSelected(item);
     onClose();
   };
 
-  const keyExtractor = (_item: any, index: { toString: () => any }) =>
-    index.toString();
+  const keyExtractor = (_item: T, index: number) => index.toString();
 
   return (
     <ActionSheet
@@ -90,7 +89,7 @@ export const Picker: React.FC<PickerProps> = ({
           height: height,
         }}
       >
-        <FlatList
+        <FlatList<T>
           disableScrollViewPanResponder={true}
           contentContainerStyle={{ paddingHorizontal: 20 }}
           stickyHeaderIndices={[0]}
@@ -177,7 +176,9 @@ export const Picker: React.FC<PickerProps> = ({
           nestedScrollEnabled={true}
           data={data}
           renderItem={({ item, index }) => {
-            if (renderListItem) return renderListItem(item, index);
+            if (renderListItem) {
+              return renderListItem(item, index);
+            }
 
             return <Item item={item} index={index} />;
           }}
