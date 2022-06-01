@@ -161,17 +161,22 @@ export const Picker = <T,>({
               ) : null}
             </View>
           }
-          ListEmptyComponent={
-            <View
-              style={{
-                flex: 1,
-                alignItems: 'center',
-                paddingTop: 20,
-              }}
-            >
-              <Text>{noDataFoundText}</Text>
-            </View>
-          }
+          ListEmptyComponent={() => {
+            if (!loading) {
+              return (
+                <View
+                  style={{
+                    flex: 1,
+                    alignItems: 'center',
+                    paddingTop: 20,
+                  }}
+                >
+                  <Text>{noDataFoundText}</Text>
+                </View>
+              );
+            }
+            return null;
+          }}
           ref={scrollViewRef}
           nestedScrollEnabled={true}
           data={data}

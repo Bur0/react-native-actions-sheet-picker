@@ -3552,10 +3552,10 @@ react-is@^16.12.0, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-native-actions-sheet@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/react-native-actions-sheet/-/react-native-actions-sheet-0.6.1.tgz#ccfa2e3d717c9c44d7d51fc084876324bee0e8d0"
-  integrity sha512-cBDw1nVrgV9Wluonb/r3pXKxjN2Wm6iGs+DjlAoHoGQj0pD6QR2aLrXyO30334pjWnJE4oMRFv8G02PM8ikdNg==
+react-native-actions-sheet@^0.3.0:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/react-native-actions-sheet/-/react-native-actions-sheet-0.3.5.tgz#7e91a7a5598e396a7ea3de223291a94a0fcb5b32"
+  integrity sha512-m777kTyNLADV3hF0wCT43LTWeIPS4ZHC5Gd5+8WQ6OD1u6U44AXpmYXpBfn6ji7dq70a3Is+Dh9SkzmmVK++JQ==
 
 react-native-gesture-handler@^2.4.2:
   version "2.4.2"
