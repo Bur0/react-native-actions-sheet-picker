@@ -28,7 +28,7 @@ export const Picker = <T,>({
   searchable = false,
   loading = false,
   label,
-  height = Dimensions.get('window').height * 0.5,
+  height = Math.floor(Dimensions.get('window').height * 0.5),
   closeText = 'Close',
   placeholderText = 'Search',
   noDataFoundText = 'No Data Found.',
