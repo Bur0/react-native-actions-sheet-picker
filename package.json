@@ -1,6 +1,6 @@
 {
   "name": "react-native-actions-sheet-picker",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A React Native component that provides a filterable select dropdown/picker.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
