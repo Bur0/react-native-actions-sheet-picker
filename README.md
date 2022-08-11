@@ -131,8 +131,8 @@ const styles = StyleSheet.create({
 
 ## Method
 
-| Properties               | Type       | Description                           | 
-| ------------------------ | ---------- | ------------------------------------- | 
+| Properties               | Type       | Description                           |
+| ------------------------ | ---------- | ------------------------------------- |
 | **onOpen**               | `function` | SheetManager show                     |
 | **onClose**              | `function` | SheetManager hide                     |
 
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
 
 | Properties           | Type     | Description                                                                                                          |
 | -------------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
-| **actionsShetProps** | `object` | [react-native-actions-sheet](https://github.com/ammarahm-ed/react-native-actions-sheet 'react-native-actions-sheet') |     |
+| **actionsSheetProps** | `object` | [react-native-actions-sheet](https://github.com/ammarahm-ed/react-native-actions-sheet 'react-native-actions-sheet') |     |
 | **flatListProps**    | `object` | [FlatListProps](https://reactnative.dev/docs/flatlist 'FlatListProps')                                               |     |
 | **searchInputProps** | `object` | [TextInputProps](https://reactnative.dev/docs/textinput 'TextInputProps')                                            |     |
 

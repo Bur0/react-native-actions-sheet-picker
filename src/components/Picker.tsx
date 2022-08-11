@@ -136,7 +136,7 @@ export const Picker = <T,>({
                       onClose();
                     }}
                   >
-                    <Text>{closeText}</Text>
+                    <Text style={{color: '#333'}}>{closeText}</Text>
                   </TouchableOpacity>
                 </View>
               ) : null}
@@ -171,7 +171,7 @@ export const Picker = <T,>({
                     paddingTop: 20,
                   }}
                 >
-                  <Text>{noDataFoundText}</Text>
+                  <Text style={{color: '#333'}}>{noDataFoundText}</Text>
                 </View>
               );
             }
