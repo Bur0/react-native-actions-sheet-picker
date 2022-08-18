@@ -148,6 +148,8 @@ const styles = StyleSheet.create({
 ## Roadmap
 
  * [ ] Multiple select
+ * [ ] Issue 3 (https://github.com/Bur0/react-native-actions-sheet-picker/issues/3)
+ * [ ] Issue 4 (https://github.com/Bur0/react-native-actions-sheet-picker/issues/4)
  * [x] renderListItem | props
  * [x] Selected highlight
 
