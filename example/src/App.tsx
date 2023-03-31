@@ -1,14 +1,14 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, {useState, useMemo, useEffect} from 'react';
 
-import { StyleSheet, Text, TouchableOpacity, SafeAreaView } from 'react-native';
-import { Picker, onOpen } from 'react-native-actions-sheet-picker';
+import {StyleSheet, Text, TouchableOpacity, SafeAreaView} from 'react-native';
+import {Picker, onOpen} from 'react-native-actions-sheet-picker';
 
 /*
  **Example data:
  */
 import countries from './countries.json';
 
-type CountryInfo = typeof countries[number];
+type CountryInfo = (typeof countries)[number];
 
 export default function App() {
   const [data, setData] = useState<CountryInfo[]>([]);
@@ -24,8 +24,8 @@ export default function App() {
    * @param {string} filter
    */
   const filteredData = useMemo(() => {
-    return data.filter((item) =>
-      item.name.toLocaleLowerCase('en').includes(query.toLocaleLowerCase('en'))
+    return data.filter(item =>
+      item.name.toLocaleLowerCase('en').includes(query.toLocaleLowerCase('en')),
     );
   }, [data, query]);
 
@@ -43,11 +43,10 @@ export default function App() {
         style={styles.button}
         onPress={() => {
           onOpen('country');
-        }}
-      >
+        }}>
         <Text>Open ActionSheet</Text>
       </TouchableOpacity>
-      <Text style={{ padding: 10 }}>Chosen : {JSON.stringify(selected)}</Text>
+      <Text style={{padding: 10}}>Chosen : {JSON.stringify(selected)}</Text>
       <Picker
         id="country"
         data={filteredData}
