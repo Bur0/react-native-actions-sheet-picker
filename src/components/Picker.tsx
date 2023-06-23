@@ -1,4 +1,4 @@
-import React, { useRef, createRef, useState } from 'react';
+import React, { createRef, useState } from 'react';
 import {
   View,
   TouchableOpacity,
@@ -8,10 +8,16 @@ import {
   Dimensions,
   SafeAreaView,
 } from 'react-native';
-import ActionSheet, { SheetManager } from 'react-native-actions-sheet';
+import ActionSheet, {
+  ActionSheetRef,
+  SheetManager,
+  useScrollHandlers,
+} from 'react-native-actions-sheet';
+
 import { FlatList } from 'react-native-gesture-handler';
 
 import type { PickerProps } from './Picker.types';
+import { StyleSheet } from 'react-native';
 
 export const onOpen = (id: any) => {
   SheetManager.show(id);
@@ -42,9 +48,9 @@ export const Picker = <T,>({
 }: PickerProps<T>) => {
   const [selectedKey, setSelectedKey] = useState(null);
 
-  const actionSheetRef = createRef<ActionSheet>();
+  const actionSheetRef = createRef<ActionSheetRef>();
 
-  const scrollViewRef = useRef(null);
+  const scrollHandlers = useScrollHandlers<FlatList>(id, actionSheetRef);
 
   const onClose = () => {
     SheetManager.hide(id);
@@ -79,9 +85,8 @@ export const Picker = <T,>({
     <ActionSheet
       id={id}
       ref={actionSheetRef}
-      indicatorColor={'transparent'}
+      indicatorStyle={styles.indicator}
       gestureEnabled={true}
-      keyboardShouldPersistTaps="always"
       {...actionsSheetProps}
     >
       <SafeAreaView
@@ -136,7 +141,7 @@ export const Picker = <T,>({
                       onClose();
                     }}
                   >
-                    <Text style={{color: '#333'}}>{closeText}</Text>
+                    <Text style={{ color: '#333' }}>{closeText}</Text>
                   </TouchableOpacity>
                 </View>
               ) : null}
@@ -171,13 +176,12 @@ export const Picker = <T,>({
                     paddingTop: 20,
                   }}
                 >
-                  <Text style={{color: '#333'}}>{noDataFoundText}</Text>
+                  <Text style={{ color: '#333' }}>{noDataFoundText}</Text>
                 </View>
               );
             }
             return null;
           }}
-          ref={scrollViewRef}
           nestedScrollEnabled={true}
           data={data}
           renderItem={({ item, index }) => {
@@ -188,12 +192,16 @@ export const Picker = <T,>({
             return <Item item={item} index={index} />;
           }}
           keyExtractor={keyExtractor}
-          onMomentumScrollEnd={() =>
-            actionSheetRef.current?.handleChildScrollEnd()
-          }
           {...flatListProps}
+          {...scrollHandlers}
         />
       </SafeAreaView>
     </ActionSheet>
   );
 };
+
+const styles = StyleSheet.create({
+  indicator: {
+    backgroundColor: 'transparent',
+  },
+});
